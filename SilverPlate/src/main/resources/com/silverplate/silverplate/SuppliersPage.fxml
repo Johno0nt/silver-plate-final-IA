@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import impl.com.calendarfx.view.NumericTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.silverplate.silverplate.Controller.SuppliersPage">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleLanguageToggle" text="Change Language" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane prefHeight="445.0" prefWidth="907.0" style="-fx-background-color: #dcc9a8;">
+               <children>
+                  <Label layoutX="22.0" layoutY="7.0" prefHeight="56.0" prefWidth="695.0" text="%suppliers">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchField" layoutX="326.0" layoutY="74.0" prefHeight="25.0" prefWidth="512.0" />
+                  <Label fx:id="searchLabel" layoutX="255.0" layoutY="76.0" text="%search">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameField" layoutX="83.0" layoutY="146.0" />
+                  <TextField fx:id="emailField" layoutX="84.0" layoutY="223.0" />
+                  <ComboBox fx:id="categoryBox" layoutX="83.0" layoutY="258.0" prefWidth="150.0" />
+                  <Button fx:id="addButton" layoutX="39.0" layoutY="311.0" mnemonicParsing="false" onAction="#addSupplier" prefHeight="45.0" prefWidth="79.0" style="-fx-background-color: #50483b;" text="%add" textFill="WHITE" />
+                  <Button fx:id="updateButton" layoutX="146.0" layoutY="311.0" mnemonicParsing="false" onAction="#supplierEdit" prefHeight="45.0" prefWidth="79.0" style="-fx-background-color: #50483b;" text="%update" textFill="WHITE" />
+                  <Label fx:id="nameLabel" layoutX="22.0" layoutY="150.0" text="%name" />
+                  <Label fx:id="phoneLabel" layoutX="22.0" layoutY="188.0" text="%phone" />
+                  <Label fx:id="emailLabel" layoutX="22.0" layoutY="227.0" prefHeight="17.0" prefWidth="44.0" text="%email" />
+                  <Label fx:id="categoryLabel" layoutX="22.0" layoutY="262.0" text="%category" />
+                  <TableView fx:id="supplierTable" layoutX="255.0" layoutY="109.0" onMouseClicked="#getSelected" prefHeight="279.0" prefWidth="583.0">
+                    <columns>
+                      <TableColumn fx:id="col_supplierName" prefWidth="119.0" text="%name" />
+                      <TableColumn fx:id="col_supplierPhone" prefWidth="126.0" text="%phone" />
+                        <TableColumn fx:id="col_supplierEmail" prefWidth="209.0" text="%email" />
+                        <TableColumn fx:id="col_inventoryCategory" prefWidth="85.0" text="%category" />
+                        <TableColumn fx:id="col_supplierId" prefWidth="43.0" text="id" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="updateButton1" layoutX="146.0" layoutY="374.0" mnemonicParsing="false" onAction="#supplierDelete" prefHeight="45.0" prefWidth="79.0" style="-fx-background-color: #50483b;" text="%delete" textFill="WHITE" />
+                  <NumericTextField fx:id="phoneField" layoutX="84.0" layoutY="184.0" />
+                  <TextField fx:id="idField" editable="false" layoutX="84.0" layoutY="109.0" />
+                  <Label layoutX="56.0" layoutY="113.0" text="id" />
+               </children>
+            </Pane>
+         </children></AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<VBox prefHeight="400.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.silverplate.silverplate.Controller.AddProductPage">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" onAction="#handleLanguageToggle" text="Help">
+          <items>
+            <MenuItem fx:id="changeLanguage" mnemonicParsing="false" text="Change Language" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefWidth="787.0" style="-fx-background-color: #dcc9a8;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="31.0" layoutY="14.0" prefHeight="43.0" prefWidth="711.0" text="%addProduct">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <TableView fx:id="ingredientsTable" layoutX="441.0" layoutY="88.0" prefHeight="221.0" prefWidth="301.0">
+              <columns>
+                <TableColumn fx:id="col_ingredient" prefWidth="228.0" text="Ingredient" />
+                <TableColumn fx:id="col_quantity" prefWidth="72.0" text="# Num." />
+              </columns>
+            </TableView>
+            <TextField fx:id="productNameField" layoutX="118.0" layoutY="87.0" prefHeight="25.0" prefWidth="301.0" />
+            <Label layoutX="33.0" layoutY="91.0" prefHeight="17.0" prefWidth="70.0" text="%name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="priceTextField" layoutX="118.0" layoutY="142.0" prefHeight="25.0" prefWidth="301.0" />
+            <Label layoutX="33.0" layoutY="146.0" prefHeight="17.0" prefWidth="70.0" text="%price">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="categoryBox" layoutX="118.0" layoutY="205.0" prefHeight="25.0" prefWidth="301.0" promptText="Category" />
+            <Label layoutX="33.0" layoutY="209.0" prefHeight="17.0" prefWidth="70.0" text="%category">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="22.0" layoutY="267.0" prefHeight="17.0" prefWidth="90.0" text="%ingredients">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <ComboBox fx:id="quantityBox" layoutX="293.0" layoutY="263.0" prefHeight="25.0" prefWidth="77.0" promptText="#" />
+            <Button layoutX="441.0" layoutY="319.0" mnemonicParsing="false" onAction="#removeIngredient" prefHeight="25.0" prefWidth="301.0" style="-fx-background-color: #50483b;" text="%removeIngredient" textFill="WHITE" />
+            <Button fx:id="addIngredientButton" layoutX="377.0" layoutY="263.0" mnemonicParsing="false" onAction="#addIngredient" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #50483b;" text="+" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button layoutX="117.0" layoutY="319.0" mnemonicParsing="false" onAction="#addProductButton" prefHeight="25.0" prefWidth="221.0" style="-fx-background-color: #50483b;" text="%addProduct" textFill="WHITE" />
+            <SearchableComboBox fx:id="ingredientsBox" layoutX="117.0" layoutY="263.0" prefHeight="25.0" prefWidth="169.0" promptText="Ingredients" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

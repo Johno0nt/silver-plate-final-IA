@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="SilverPlate">
+    <output-path>$PROJECT_DIR$/out/artifacts/SilverPlate</output-path>
+    <root id="root">
+      <element id="archive" name="SilverPlate.jar">
+        <element id="module-output" name="SilverPlate" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/../../DOCUMENTATION/NGO-J-CritC&amp;E-Draft/Code/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

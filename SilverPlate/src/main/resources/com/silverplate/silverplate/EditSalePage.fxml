@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<VBox prefHeight="658.0" prefWidth="964.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.silverplate.silverplate.Controller.EditSalePage">
+   <children>
+      <MenuBar prefWidth="726.0" VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="changeLanguage" mnemonicParsing="false" onAction="#handleLanguageToggle" text="Change Language" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefWidth="733.0" style="-fx-background-color: #dcc9a8;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="43.0" prefWidth="639.0" text="%EditSale">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <TableView fx:id="productsTable" layoutX="499.0" layoutY="57.0" prefHeight="221.0" prefWidth="368.0">
+               <columns>
+                  <TableColumn fx:id="col_product" prefWidth="291.0" text="%products" />
+                  <TableColumn fx:id="col_quantity" prefWidth="76.0" text="# Num." />
+               </columns>
+            </TableView>
+            <ComboBox fx:id="quantityBox" layoutX="316.0" layoutY="157.0" prefHeight="25.0" prefWidth="77.0" promptText="#" />
+            <Button layoutX="499.0" layoutY="288.0" mnemonicParsing="false" onAction="#removeProduct" prefHeight="25.0" prefWidth="368.0" style="-fx-background-color: #50483b;" text="%removeProduct" textFill="WHITE" />
+            <Button fx:id="addProductButton" layoutX="401.0" layoutY="157.0" mnemonicParsing="false" onAction="#addProductToSale" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #50483b;" text="+" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="34.0" layoutY="253.0" mnemonicParsing="false" onAction="#editSale" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: #50483b;" text="%editSale" textFill="WHITE" />
+            <SearchableComboBox fx:id="productsBox" layoutX="61.0" layoutY="157.0" prefHeight="25.0" prefWidth="246.0" promptText="%products" />
+            <DatePicker fx:id="datePicker" layoutX="60.0" layoutY="102.0" prefHeight="25.0" prefWidth="385.0" promptText="%saleDate" />
+            <Label layoutX="108.0" layoutY="198.0" prefHeight="36.0" prefWidth="99.0" text="Total:">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalLabel" layoutX="175.0" layoutY="198.0" prefHeight="36.0" prefWidth="99.0">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="234.0" layoutY="332.0" prefHeight="279.0" prefWidth="693.0">
+               <children>
+                  <TableView fx:id="salesTable" onMouseClicked="#getSelected" prefHeight="336.0" prefWidth="733.0">
+                     <columns>
+                        <TableColumn fx:id="col_salesId" prefWidth="33.0" text="id" />
+                        <TableColumn fx:id="col_saleProduct" prefWidth="550.0" text="%products" />
+                        <TableColumn fx:id="col_saleTotal" prefWidth="109.0" text="Total $" />
+                     </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <DatePicker fx:id="saleDatePicker" layoutX="24.0" layoutY="340.0" prefHeight="25.0" prefWidth="190.0" promptText="%saleDate" />
+            <Button fx:id="loadTableButton" layoutX="24.0" layoutY="373.0" mnemonicParsing="false" onAction="#loadTable" prefHeight="27.0" prefWidth="190.0" style="-fx-background-color: #50483b;" text="%loadtable" textFill="WHITE" />
+            <Button layoutX="265.0" layoutY="253.0" mnemonicParsing="false" onAction="#deleteSale" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: #50483b;" text="%deleteSale" textFill="WHITE" />
+            <TextField fx:id="idField" editable="false" layoutX="296.0" layoutY="64.0" />
+            <Label layoutX="265.0" layoutY="68.0" prefHeight="17.0" prefWidth="22.0" text="id">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
